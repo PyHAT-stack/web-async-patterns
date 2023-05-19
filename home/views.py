@@ -2,7 +2,6 @@ import asyncio
 import random
 
 from django.http import StreamingHttpResponse
-from django.shortcuts import render
 from django.template.loader import get_template, render_to_string
 
 customized_recommendations = [
@@ -34,13 +33,6 @@ async def slow_numbers(minimum=1, maximum=10):
 
 # Create your views here.
 async def index(request):
-    foo = render_to_string('home/home.html', dict(foo=slow_numbers()))
-    # ber = (x async for x in render_to_string('home/home.html', dict(foo=slow_numbers())))
-    # r = StreamingHttpResponse(slow_numbers())
-    r = StreamingHttpResponse(recommendations())
-    print(f'Response is streaming {r.is_async}')
-    return r
+    return StreamingHttpResponse(recommendations())
 
 
-def foo(request):
-    return render(request)
