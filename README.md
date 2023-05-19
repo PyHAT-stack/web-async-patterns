@@ -26,3 +26,8 @@ uvicorn stream.asgi:application --reload
 ```
 
 You can then click the link in the terminal or go to http://127.0.0.1:8000 to view the page.
+
+
+## Thanks
+
+Thanks to https://github.com/fajar7xx/ecommerce-template-tailwind-1 for the HTML template.
