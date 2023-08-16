@@ -43,6 +43,89 @@
       }
     }
   </script>
+  <style>
+    .skeleton:not(:has(.item +.item +.item +.item ))::before {
+      /* A faded white bar scrubbing across the skeleton */
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 3rem;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0) 10%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+      animation: shimmer 2.5s linear infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%)
+      }
+      100% {
+        transform: translateX(100vw)
+      }
+    }
+
+    .skeleton:not(:has(.item + .item + .item + .item)) {
+    {#.skeleton {#}
+      position: relative;
+      background-repeat: no-repeat;
+      {#background-repeat: repeat-x;#}
+      background-image:
+        linear-gradient(#eee 0, #dfe1e1 95%),
+        {#linear-gradient(#aaa 50%, transparent 0),#}
+        linear-gradient(#eee 0, #dfe1e1 95%),
+        linear-gradient(#eee 0, #dfe1e1 95%),
+        linear-gradient(#eee 0, #dfe1e1 95%),
+        linear-gradient(#f9f9f9 0, #fefefe 95%),
+        linear-gradient(#f9f9f9 0, #fefefe 95%),
+        linear-gradient(#f9f9f9 0, #fefefe 95%),
+        linear-gradient(#f9f9f9 0, #fefefe 95%);
+      background-size:
+        22% 52.6%,
+        {#19% 2em,#}
+        22% 52.6%,
+        22% 51.6%,
+        22% 52.6%,
+        22% 100%,
+        22% 100%,
+        22% 100%,
+        22% 100%;
+      background-position:
+        left top,
+        {#left 1em top 66%,#}
+        left 33.4% top,
+        left 66.8% top,
+        left 100% top,
+        left top,
+        left 33.4% top,
+        left 66.8% top,
+        left 100% top;
+    }
+/*
+    {# nothing loaded #}
+    .skeleton:not(:has(.item)) {
+      outline: 2px solid #bada55;
+    }
+
+    {# one loaded #}
+    .skeleton:has(.item) {
+      outline: 2px solid yellow;
+    }
+
+    {# two loaded #}
+    .skeleton:has(.item + .item) {
+      outline: 2px solid red;
+    }
+
+    {# three loaded #}
+    .skeleton:has(.item + .item + .item) {
+      outline: 2px solid darkgreen;
+    }
+
+    {# four loaded #}
+    .skeleton:has(.item + .item + .item + .item) {
+      outline: none;
+    }
+*/
+  </style>
 
 </head>
 
