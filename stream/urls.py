@@ -18,9 +18,12 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path
 
-import home.views
+import home.views.stream
+import home.views.sse
 
 urlpatterns = [
-                  path("admin/", admin.site.urls),
-                  path('', home.views.index, name='index')
-              ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("admin/", admin.site.urls),
+    path('', home.views.stream.index, name='index'),
+    path('via-sse', home.views.sse.index, name='index_sse'),
+    path('recommend-sse', home.views.sse.handle_sse, name='index_sse'),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
