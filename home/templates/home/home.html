@@ -51,6 +51,9 @@
   <div class="container pb-16">
     <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">recommended for you</h2>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-6 skeleton min-h-[325px]">
+      {% for item in recommendations %}
+      	{% include 'home/_item.html' with recommendation=item %}
+      {% endfor %}
       <!-- --- stream products --- -->
     </div>
   </div>

@@ -52,13 +52,13 @@
     <h2 class="text-2xl font-medium text-gray-800 uppercase mb-6">recommended for you</h2>
     <div
       class="grid grid-cols-2 md:grid-cols-4 gap-6 skeleton min-h-[325px]"
-      id="foo"
+      id="home-recommendations"
     >
       <div
         hx-ext="sse"
         sse-connect="/recommend-sse"
         sse-swap="message"
-        hx-target="#foo"
+        hx-target="#home-recommendations"
       ></div>
       <!-- --- stream products --- -->
     </div>
