@@ -54,13 +54,16 @@
       class="grid grid-cols-2 md:grid-cols-4 gap-6 skeleton min-h-[325px]"
       id="home-recommendations"
     >
-      <div
-        hx-ext="sse"
-        sse-connect="/recommend-sse"
-        sse-swap="message"
-        hx-target="#home-recommendations"
-      ></div>
-      <!-- --- stream products --- -->
+      {% for item in recommendations %}
+      	{% include 'home/_item.html' with recommendation=item %}
+      {% empty %}
+        <div
+          hx-ext="sse"
+          sse-connect="/recommend-sse"
+          sse-swap="message"
+          hx-target="#home-recommendations"
+        ></div>
+      {% endfor %}
     </div>
   </div>
   <!-- ./product -->
