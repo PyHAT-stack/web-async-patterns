@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 
+from jinja2 import FileSystemLoader
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -25,7 +27,6 @@ SECRET_KEY = "django-insecure-v2xyf4$&45iz^1-ltvlw66hs0n)chyqd!4wxv%d06g8773elh(
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -64,6 +65,16 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
             ],
         },
+    },
+    {
+        "BACKEND": "django.template.backends.jinja2.Jinja2",
+        "DIRS": [
+            BASE_DIR / 'jinja',
+        ],
+        'OPTIONS': {
+            'enable_async': True,
+            'loader': FileSystemLoader(BASE_DIR / 'jinja')
+        }
     },
 ]
 
