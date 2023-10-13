@@ -1,4 +1,4 @@
-# Proof of concept: Streaming HTML in Django
+# Proof of concept: Streaming HTML with Python
 
 Inspired by Taylor Hunt's incredible explanation of how he turned [a slow Fortune 20 webapp into a snappy experience, even on a cheap Android phone](https://dev.to/tigt/making-the-worlds-fastest-website-and-other-mistakes-56na), I made this repo to show the current capability of Django to render streaming HTML.
 
@@ -15,7 +15,7 @@ This concept shows how a recommendation engine takes some time to recommend four
 Open a terminal at the root of this project and type the following:
 
 ```shell
-python -m venv .venv --prompt strm_django
+python -m venv .venv --prompt stream_python
 # If in Windows:
 .venv/Scripts/activate
 # otherwise
