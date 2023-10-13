@@ -1,7 +1,7 @@
 {% extends "shell.html" %}
 
 {% block main %}
-
+{% csrf_token %}
   <!-- banner -->
   <div class="bg-cover bg-no-repeat bg-center py-36" style="background-image: url('/static/images/banner-bg.jpg');">
     <div class="container">

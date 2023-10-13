@@ -21,12 +21,12 @@ from django.urls import path
 import home.views
 import home.views.stream
 import home.views.sse
-import home.views.gin
+import home.views.jinja
 
 urlpatterns = [
     path('', home.views.chooser),
     path('stream', home.views.stream.index, name='index'),
     path('via-sse', home.views.sse.index, name='index_sse'),
     path('recommend-sse', home.views.sse.handle_sse, name='index_sse'),
-    path('jinja', home.views.gin.index, name='index_jinja'),
+    path('jinja', home.views.jinja.index, name='index_jinja'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
